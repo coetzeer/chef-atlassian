@@ -1,0 +1,33 @@
+---
+driver:
+  name: vagrant
+  customize:
+        memory: 1024
+
+provisioner:
+  name: chef_solo
+  
+driver_plugin: vagrant
+driver_config:
+  http_proxy: http://185.10.116.45:80
+  https_proxy: https://185.10.116.45:80  
+  require_chef_omnibus: true
+  chef_omnibus_url: "https://example.com/chef/install.sh"
+
+platforms:
+  - name: crowd
+    driver_config:
+      box: opscode-centos-6.5
+      box_url: http://jenkins.polarlake.com/userContent/vagrant/opscode_centos-6.5_chef-provisionerless.box      
+      network:
+      - ["private_network", {ip: "192.168.56.21"}]
+
+suites:
+  - name: default
+    run_list:
+    - recipe[crowd::default]
+    attributes:
+        mysql:
+            server_debian_password: foobar
+            server_root_password: foobar
+            server_repl_password: foobar

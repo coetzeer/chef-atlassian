@@ -1,0 +1,6 @@
+site :opscode
+
+cookbook 'yum-epel', '~> 0.3.4'
+cookbook 'git', '~> 3.0.0'
+
+metadata

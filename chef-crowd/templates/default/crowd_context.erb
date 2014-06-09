@@ -1,0 +1,43 @@
+<Context path="/crowd" docBase="../../crowd-webapp" useHttpOnly="true">
+
+    <!-- If you wish to configure a JNDI based datasource, below is an example using HSQL DB -->
+
+    <Resource name="jdbc/CrowdDS" auth="Container" type="javax.sql.DataSource"
+              username="crowd"
+              password="crowd"
+              driverClassName="com.mysql.jdbc.Driver"
+              url="jdbc:mysql://192.168.56.20:3306/crowd"
+              maxActive="20"
+              validationQuery="select 1"
+            />          
+            
+    <!-- NOTE: When a database server reboots or their is a network failure all the connections in the
+    * connection pool are broken and normally this requires a Application Server reboot. If you include the
+    * parameter validationQuery="{QUERY FOR YOUR DB HERE} as show below a new connection is created to replace it.
+    * For more information see http://confluence.atlassian.com/display/JIRA/Surviving+Connection+Closures
+    *
+    * validationQuery="Select 1"
+    -->
+
+    <!-- NOTE: If you use a database other than hsqldb:
+    * delete the minEvictableIdleTimeMillis and timeBetweenEvictionRunsMillis attributes
+    -->
+
+    <Resource name="mail/SmtpServer"
+            auth="Container"
+            type="javax.mail.Session"
+            mail.smtp.host="192.168.56.20"
+            mail.smtp.port="25000"
+            mail.transport.protocol="smtp"            
+            />
+
+<!--
+SSL (e.g. gmail) settings
+            mail.smtp.auth="true"
+            mail.smtp.user="myusername@gmail.com"
+            password="mypassword"
+            mail.smtp.starttls.enable="true"
+            mail.smtp.socketFactory.class="javax.net.ssl.SSLSocketFactory"
+-->
+
+</Context>

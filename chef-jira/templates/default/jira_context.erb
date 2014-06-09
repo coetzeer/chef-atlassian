@@ -1,0 +1,34 @@
+ <Context path="/jira" docBase="${catalina.home}/atlassian-jira" reloadable="false" useHttpOnly="true">
+
+
+                    <!--
+                     ====================================================================================
+
+                     Note, you no longer configure your database driver or connection parameters here.
+                     These are configured through the UI during application setup.
+
+                     ====================================================================================
+                    -->
+
+                    <Resource name="UserTransaction" auth="Container" type="javax.transaction.UserTransaction"
+                              factory="org.objectweb.jotm.UserTransactionFactory" jotm.timeout="60"/>
+                    <Manager pathname=""/>
+
+    <Resource name="jdbc/CrowdDS" auth="Container" type="javax.sql.DataSource"
+              username="jira"
+              password="jira"
+              driverClassName="com.mysql.jdbc.Driver"
+              url="jdbc:mysql://192.168.56.20:3306/jira"
+              maxActive="20"
+              validationQuery="select 1"
+            />
+
+    <Resource name="mail/SmtpServer"
+            auth="Container"
+            type="javax.mail.Session"
+            mail.smtp.host="192.168.56.20"
+            mail.smtp.port="25000"
+            />
+
+                </Context>
+

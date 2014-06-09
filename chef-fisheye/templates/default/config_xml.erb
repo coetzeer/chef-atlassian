@@ -1,0 +1,21 @@
+
+<config control-bind="127.0.0.1:8059" version="1.0">
+    <!-- see example-config.xml and config.xsd for more documentation -->
+    <web-server context="fisheye">
+        <http bind=":8060"/>
+    </web-server>
+    <security allow-anon="true" allow-cru-anon="true"/>
+    <repository-defaults>
+        <linker/>
+        <allow/>
+        <tarball enabled="false" maxFileCount="0"/>
+        <security allow-anon="true"/>
+    </repository-defaults>
+    <database type="mysql">
+        <connection dialect="org.hibernate.dialect.MySQL5InnoDBDialect" driver="com.mysql.jdbc.Driver" jdbcurl="jdbc:mysql://<%= node['bpl']['devtool']['mysql_server'] %>:3306/<%= node['bpl']['devtool']['mysql_dbname'] %>" password="<%= node['bpl']['devtool']['mysql_password'] %>" username="<%= node['bpl']['devtool']['mysql_user'] %>" maxPoolSize="20" minPoolSize="5" driverSource="bundled" />
+        <parameters>useUnicode=true
+        characterEncoding=UTF8
+        connectionCollation=UTF8_bin
+        </parameters>
+    </database>
+</config>

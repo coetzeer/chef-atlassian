@@ -1,0 +1,25 @@
+{
+  "sources": {
+    "mysql-cluster": {
+      "path": "."
+    },
+    "mysql": {
+      "locked_version": "4.0.20"
+    },
+    "openssl": {
+      "locked_version": "1.1.0"
+    },
+    "build-essential": {
+      "locked_version": "1.4.2"
+    },
+    "cron": {
+      "locked_version": "1.2.8"
+    },
+    "nfs": {
+      "locked_version": "0.5.0"
+    },
+    "line": {
+      "locked_version": "0.5.1"
+    }
+  }
+}

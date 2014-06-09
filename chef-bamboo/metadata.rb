@@ -1,0 +1,13 @@
+name             'bamboo'
+maintainer       'YOUR_COMPANY_NAME'
+maintainer_email 'YOUR_EMAIL'
+license          'All rights reserved'
+description      'Installs/Configures bamboo'
+long_description 'Installs/Configures bamboo'
+version          '0.1.0'
+
+depends 'database'
+depends 'ark'
+depends 'apache2'
+depends 'cron'
+depends 'yum'

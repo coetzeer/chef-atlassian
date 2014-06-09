@@ -1,0 +1,40 @@
+{
+  "sources": {
+    "fisheye": {
+      "path": "."
+    },
+    "database": {
+      "locked_version": "2.0.0"
+    },
+    "mysql": {
+      "locked_version": "4.0.20"
+    },
+    "openssl": {
+      "locked_version": "1.1.0"
+    },
+    "build-essential": {
+      "locked_version": "1.4.2"
+    },
+    "postgresql": {
+      "locked_version": "3.3.4"
+    },
+    "apt": {
+      "locked_version": "2.3.4"
+    },
+    "aws": {
+      "locked_version": "2.1.0"
+    },
+    "xfs": {
+      "locked_version": "1.1.0"
+    },
+    "ark": {
+      "locked_version": "0.4.2"
+    },
+    "apache2": {
+      "locked_version": "1.8.14"
+    },
+    "cron": {
+      "locked_version": "1.2.8"
+    }
+  }
+}

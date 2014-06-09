@@ -1,0 +1,12 @@
+name             'confluence'
+maintainer       'YOUR_COMPANY_NAME'
+maintainer_email 'YOUR_EMAIL'
+license          'All rights reserved'
+description      'Installs/Configures confluence'
+long_description 'Installs/Configures confluence'
+version          '0.1.0'
+
+depends 'database'
+depends 'ark'
+depends 'apache2'
+depends 'cron'
